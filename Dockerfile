@@ -1,6 +1,6 @@
 FROM alpine:latest AS builder
 
-RUN apk --no-cache --no-progress build-base git
+RUN apk add --no-cache --no-progress build-base git
 
 WORKDIR /home/builder/
 RUN git clone --single-branch --branch v5.0.0-alpha12 https://github.com/premake/premake-core.git
