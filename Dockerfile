@@ -9,7 +9,7 @@ RUN cd ./premake-core && \
   ./bin/release/premake5 embed && \
   ./bin/release/premake5 gmake && \
   make
-RUN strip ./bin/release/premake5
+RUN strip ./premake-core/bin/release/premake5
 
 FROM alpine:latest
 WORKDIR /home/premake
