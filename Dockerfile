@@ -9,9 +9,9 @@ RUN cd ./premake-core && \
   ./bin/release/premake5 embed && \
   ./bin/release/premake5 gmake && \
   make
-RUN strip bin/release/premake5
+RUN strip ./bin/release/premake5
 
 FROM alpine:latest
 WORKDIR /home/premake
-COPY --from=builder /home/builder/bin/release/premake5 .
+COPY --from=builder /home/builder/premake-core/bin/release/premake5 .
 ENV PATH="${PATH}:/home/premake"
